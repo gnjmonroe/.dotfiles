@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = 고진수
+	email = jinsoo@lionrocket.ai
+# Please adapt and uncomment the following lines:
+#	name = 고진수
+#	email = jinsoo@gojinsus-MacBook-Pro.local
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
