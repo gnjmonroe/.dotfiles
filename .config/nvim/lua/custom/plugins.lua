@@ -14,6 +14,17 @@ local plugins = {
     end
   },
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "emmet_language_server",
+        "eslint-lsp",
+        "prettier",
+        "typescript-language-server"
+      }
+    }
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
