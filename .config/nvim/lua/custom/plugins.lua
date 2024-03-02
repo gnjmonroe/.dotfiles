@@ -17,8 +17,10 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "emmet_language_server",
+        "css-modules-language-server",
+        "emmet-language-server",
         "eslint-lsp",
+        "lua-language-server",
         "prettier",
         "typescript-language-server"
       }
@@ -46,10 +48,18 @@ local plugins = {
         "typescript",
         "tsx",
         "json",
-        "vue",
-        "svelte"
+        "python"
+        -- "vue",
+        -- "svelte"
       }
-    }
+    },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.22", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
   }
 }
 return plugins

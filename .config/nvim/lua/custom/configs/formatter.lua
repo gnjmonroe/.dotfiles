@@ -3,25 +3,25 @@ local M = {
   log_level = vim.log.levels.WARN,
   filetype = {
     html = {
-      require("formatter.filetypes.html").prettier,
+      require("formatter.filetypes.html").prettier
     },
     css = {
-      require("formatter.filetypes.css").prettier,
+      require("formatter.filetypes.css").prettier
     },
     json = {
-      require("formatter.filetypes.json").prettier,
+      require("formatter.filetypes.json").prettier
     },
     javascript = {
-      require("formatter.filetypes.javascript").prettier,
-    },
-    javascriptreact = {
-      require("formatter.filetypes.javascriptreact").prettier,
+      require("formatter.filetypes.javascript").prettier
     },
     typescript = {
-      require("formatter.filetypes.typescript").prettier,
+      require("formatter.filetypes.typescript").prettier
+    },
+    javascriptreact = {
+      require("formatter.filetypes.javascriptreact").prettier
     },
     typescriptreact = {
-     require("formatter.filetypes.typescriptreact").prettier,
+      require("formatter.filetypes.typescriptreact").prettier
     },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace

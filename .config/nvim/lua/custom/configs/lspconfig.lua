@@ -1,6 +1,8 @@
 local config = require("plugins.configs.lspconfig")
 local on_attach = config.on_attach
-local capabilities = config.capabilities
+-- local capabilities = config.capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
 
@@ -11,6 +13,15 @@ local function organize_imports()
   }
   vim.lsp.buf.execute_command(params)
 end
+
+lspconfig.eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
 
 lspconfig.tsserver.setup {
   on_attach = function(client, bfnr)
@@ -48,4 +59,8 @@ lspconfig.emmet_language_server.setup({
     --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
   },
+})
+
+lspconfig.cssls.setup({
+  capabilities = capabilities,
 })
