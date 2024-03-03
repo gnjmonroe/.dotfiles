@@ -5,6 +5,9 @@ sudo apt update
 sudo apt-get update
 sudo apt upgrade
 
+# install neofetch
+sudo apt install neofetch
+
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
@@ -23,3 +26,14 @@ sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packa
 
 # install pnpm
 curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+# install python3-pip
+sudo apt install python3-pip
+
+# install conda
+# download installer
+wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+# check hash
+sha256sum Anaconda3-2024.02-1-Linux-x86_64.sh
+# run installer
+bash Anaconda3-2024.02-1-Linux-x86_64.sh
