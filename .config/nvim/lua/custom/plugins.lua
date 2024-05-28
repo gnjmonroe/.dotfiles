@@ -1,5 +1,9 @@
 local plugins = {
   {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  {
     "mhartington/formatter.nvim",
     event = "VeryLazy",
     opts = function()
@@ -9,7 +13,7 @@ local plugins = {
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       require "custom.configs.lint"
     end
   },
@@ -17,7 +21,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "css-modules-language-server",
+        "cssmodules-language-server",
         "emmet-language-server",
         "eslint-lsp",
         "lua-language-server",
@@ -44,13 +48,13 @@ local plugins = {
         -- web dev
         "html",
         "css",
+        "scss",
         "javascript",
+        "javascriptreact",
         "typescript",
-        "tsx",
+        "typescriptreact",
         "json",
         "python"
-        -- "vue",
-        -- "svelte"
       }
     },
   },
@@ -60,6 +64,18 @@ local plugins = {
     version = "v2.22", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
     build = "make install_jsregexp"
-  }
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    ft = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact'
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
 }
 return plugins

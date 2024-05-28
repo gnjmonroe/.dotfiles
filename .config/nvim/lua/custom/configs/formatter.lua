@@ -8,6 +8,9 @@ local M = {
     css = {
       require("formatter.filetypes.css").prettier
     },
+    scss = {
+      require("formatter.filetypes.css").prettier
+    },
     json = {
       require("formatter.filetypes.json").prettier
     },

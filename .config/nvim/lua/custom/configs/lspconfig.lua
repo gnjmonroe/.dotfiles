@@ -9,7 +9,7 @@ local lspconfig = require("lspconfig")
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name((0))}
+    arguments = { vim.api.nvim_buf_get_name((0)) }
   }
   vim.lsp.buf.execute_command(params)
 end
@@ -27,7 +27,7 @@ lspconfig.tsserver.setup {
   on_attach = function(client, bfnr)
     on_attach(client, bfnr)
 
-    vim.api.nvim_create_user_command("OrganizeImports", organize_imports, { desc = "Organize and prune imports" })
+    vim.api.nvim_create_user_command("OrgImports", organize_imports, { desc = "Organize and prune imports" })
   end,
   capabilities = capabilities,
   init_options = {
@@ -38,7 +38,7 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.emmet_language_server.setup({
-  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+  filetypes = { "css", "html", "javascript", "javascriptreact", "scss", "typescriptreact" },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
   -- **Note:** only the options listed in the table are supported.
   init_options = {
